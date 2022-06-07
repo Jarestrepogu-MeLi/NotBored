@@ -14,6 +14,10 @@
 		231EF9D1284EA25200FCD522 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 231EF9CF284EA25200FCD522 /* Main.storyboard */; };
 		231EF9D3284EA25400FCD522 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 231EF9D2284EA25400FCD522 /* Assets.xcassets */; };
 		231EF9D6284EA25400FCD522 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 231EF9D4284EA25400FCD522 /* LaunchScreen.storyboard */; };
+		232F713C284FA39500D8B99D /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232F713A284FA39500D8B99D /* ActivityViewController.swift */; };
+		232F713D284FA39500D8B99D /* ActivityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 232F713B284FA39500D8B99D /* ActivityViewController.xib */; };
+		232F7140284FA67A00D8B99D /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232F713E284FA67A00D8B99D /* ActivityCell.swift */; };
+		232F7141284FA67A00D8B99D /* ActivityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 232F713F284FA67A00D8B99D /* ActivityCell.xib */; };
 		45C324DF284F79D5005DF3F2 /* SuggestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C324DD284F79D5005DF3F2 /* SuggestionViewController.swift */; };
 		45C324E0284F79D5005DF3F2 /* SuggestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45C324DE284F79D5005DF3F2 /* SuggestionViewController.xib */; };
 		45EAD256284EA9BF00DBAE08 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EAD255284EA9BF00DBAE08 /* Activity.swift */; };
@@ -29,6 +33,10 @@
 		231EF9D2284EA25400FCD522 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		231EF9D5284EA25400FCD522 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		231EF9D7284EA25400FCD522 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		232F713A284FA39500D8B99D /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		232F713B284FA39500D8B99D /* ActivityViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityViewController.xib; sourceTree = "<group>"; };
+		232F713E284FA67A00D8B99D /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
+		232F713F284FA67A00D8B99D /* ActivityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityCell.xib; sourceTree = "<group>"; };
 		45C324DD284F79D5005DF3F2 /* SuggestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionViewController.swift; sourceTree = "<group>"; };
 		45C324DE284F79D5005DF3F2 /* SuggestionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestionViewController.xib; sourceTree = "<group>"; };
 		45EAD255284EA9BF00DBAE08 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
@@ -107,6 +115,10 @@
 			children = (
 				45C324DD284F79D5005DF3F2 /* SuggestionViewController.swift */,
 				45C324DE284F79D5005DF3F2 /* SuggestionViewController.xib */,
+				232F713A284FA39500D8B99D /* ActivityViewController.swift */,
+				232F713B284FA39500D8B99D /* ActivityViewController.xib */,
+				232F713E284FA67A00D8B99D /* ActivityCell.swift */,
+				232F713F284FA67A00D8B99D /* ActivityCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -180,6 +192,8 @@
 				45C324E0284F79D5005DF3F2 /* SuggestionViewController.xib in Resources */,
 				231EF9D6284EA25400FCD522 /* LaunchScreen.storyboard in Resources */,
 				231EF9D3284EA25400FCD522 /* Assets.xcassets in Resources */,
+				232F713D284FA39500D8B99D /* ActivityViewController.xib in Resources */,
+				232F7141284FA67A00D8B99D /* ActivityCell.xib in Resources */,
 				231EF9D1284EA25200FCD522 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,8 +207,10 @@
 			files = (
 				23171BBB284F91820030F2B0 /* NetworkManager.swift in Sources */,
 				231EF9CE284EA25200FCD522 /* ViewController.swift in Sources */,
+				232F7140284FA67A00D8B99D /* ActivityCell.swift in Sources */,
 				231EF9CA284EA25200FCD522 /* AppDelegate.swift in Sources */,
 				45EAD256284EA9BF00DBAE08 /* Activity.swift in Sources */,
+				232F713C284FA39500D8B99D /* ActivityViewController.swift in Sources */,
 				231EF9CC284EA25200FCD522 /* SceneDelegate.swift in Sources */,
 				45C324DF284F79D5005DF3F2 /* SuggestionViewController.swift in Sources */,
 			);

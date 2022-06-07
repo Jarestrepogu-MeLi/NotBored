@@ -30,7 +30,7 @@ class SuggestionViewController: UIViewController {
                 switch result {
                 case .success(let activity): //Considerar poner un spinner
                     self.resultActivity = activity
-                    print(activity)
+                    print(self.resultActivity)
                 case .failure(let error):
                     print(error)
                 }
