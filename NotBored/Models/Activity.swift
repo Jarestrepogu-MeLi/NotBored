@@ -12,5 +12,5 @@ struct Activity: Decodable {
     let accessibility: Double
     let type: String // Enum para type ??
     let participants: Int
-    let price: Double
+    let price: Double    
 }
