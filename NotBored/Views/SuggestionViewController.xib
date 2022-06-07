@@ -91,13 +91,15 @@ Lorem ipsum dolor sit amet consectetur adipiscing elit inceptos ridiculus iaculi
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCV-GQ-U0F">
                     <rect key="frame" x="20" y="772" width="374" height="50"/>
-                    <color key="backgroundColor" systemColor="linkColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="wW2-Vo-Izl"/>
                     </constraints>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Try another">
+                    <buttonConfiguration key="configuration" style="plain" title="Try another" cornerStyle="small">
+                        <backgroundConfiguration key="background">
+                            <color key="backgroundColor" systemColor="linkColor"/>
+                        </backgroundConfiguration>
                         <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
                     </buttonConfiguration>
                     <connections>
