@@ -13,6 +13,8 @@
 		231EF9D1284EA25200FCD522 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 231EF9CF284EA25200FCD522 /* Main.storyboard */; };
 		231EF9D3284EA25400FCD522 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 231EF9D2284EA25400FCD522 /* Assets.xcassets */; };
 		231EF9D6284EA25400FCD522 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 231EF9D4284EA25400FCD522 /* LaunchScreen.storyboard */; };
+		45C324DF284F79D5005DF3F2 /* SuggestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C324DD284F79D5005DF3F2 /* SuggestionViewController.swift */; };
+		45C324E0284F79D5005DF3F2 /* SuggestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45C324DE284F79D5005DF3F2 /* SuggestionViewController.xib */; };
 		45EAD256284EA9BF00DBAE08 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EAD255284EA9BF00DBAE08 /* Activity.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +27,8 @@
 		231EF9D2284EA25400FCD522 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		231EF9D5284EA25400FCD522 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		231EF9D7284EA25400FCD522 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45C324DD284F79D5005DF3F2 /* SuggestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionViewController.swift; sourceTree = "<group>"; };
+		45C324DE284F79D5005DF3F2 /* SuggestionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestionViewController.xib; sourceTree = "<group>"; };
 		45EAD255284EA9BF00DBAE08 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +94,8 @@
 		45EAD253284EA91500DBAE08 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				45C324DD284F79D5005DF3F2 /* SuggestionViewController.swift */,
+				45C324DE284F79D5005DF3F2 /* SuggestionViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -160,6 +166,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45C324E0284F79D5005DF3F2 /* SuggestionViewController.xib in Resources */,
 				231EF9D6284EA25400FCD522 /* LaunchScreen.storyboard in Resources */,
 				231EF9D3284EA25400FCD522 /* Assets.xcassets in Resources */,
 				231EF9D1284EA25200FCD522 /* Main.storyboard in Resources */,
@@ -177,6 +184,7 @@
 				231EF9CA284EA25200FCD522 /* AppDelegate.swift in Sources */,
 				45EAD256284EA9BF00DBAE08 /* Activity.swift in Sources */,
 				231EF9CC284EA25200FCD522 /* SceneDelegate.swift in Sources */,
+				45C324DF284F79D5005DF3F2 /* SuggestionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +331,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NotBored/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -350,6 +359,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NotBored/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
