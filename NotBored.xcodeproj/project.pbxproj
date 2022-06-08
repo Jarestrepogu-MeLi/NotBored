@@ -18,11 +18,10 @@
 		232F713D284FA39500D8B99D /* ActivityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 232F713B284FA39500D8B99D /* ActivityViewController.xib */; };
 		232F7140284FA67A00D8B99D /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232F713E284FA67A00D8B99D /* ActivityCell.swift */; };
 		232F7141284FA67A00D8B99D /* ActivityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 232F713F284FA67A00D8B99D /* ActivityCell.xib */; };
-		23AC33D1284FD4EC00CC2132 /* TermsConditionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23AC33D0284FD4EC00CC2132 /* TermsConditionsViewController.xib */; };
-		23AC33D5284FD55400CC2132 /* TermsConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AC33D4284FD55400CC2132 /* TermsConditionsViewController.swift */; };
-		23AC33D8284FD73800CC2132 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AC33D7284FD73800CC2132 /* Constants.swift */; };
 		45C324DF284F79D5005DF3F2 /* SuggestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C324DD284F79D5005DF3F2 /* SuggestionViewController.swift */; };
 		45C324E0284F79D5005DF3F2 /* SuggestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45C324DE284F79D5005DF3F2 /* SuggestionViewController.xib */; };
+		45C324E7284FC4B6005DF3F2 /* StartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C324E5284FC4B6005DF3F2 /* StartingViewController.swift */; };
+		45C324E8284FC4B6005DF3F2 /* StartingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45C324E6284FC4B6005DF3F2 /* StartingViewController.xib */; };
 		45EAD256284EA9BF00DBAE08 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EAD255284EA9BF00DBAE08 /* Activity.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,11 +39,10 @@
 		232F713B284FA39500D8B99D /* ActivityViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityViewController.xib; sourceTree = "<group>"; };
 		232F713E284FA67A00D8B99D /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		232F713F284FA67A00D8B99D /* ActivityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityCell.xib; sourceTree = "<group>"; };
-		23AC33D0284FD4EC00CC2132 /* TermsConditionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsConditionsViewController.xib; sourceTree = "<group>"; };
-		23AC33D4284FD55400CC2132 /* TermsConditionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsConditionsViewController.swift; sourceTree = "<group>"; };
-		23AC33D7284FD73800CC2132 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		45C324DD284F79D5005DF3F2 /* SuggestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionViewController.swift; sourceTree = "<group>"; };
 		45C324DE284F79D5005DF3F2 /* SuggestionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestionViewController.xib; sourceTree = "<group>"; };
+		45C324E5284FC4B6005DF3F2 /* StartingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingViewController.swift; sourceTree = "<group>"; };
+		45C324E6284FC4B6005DF3F2 /* StartingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartingViewController.xib; sourceTree = "<group>"; };
 		45EAD255284EA9BF00DBAE08 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,7 +84,6 @@
 		231EF9C8284EA25200FCD522 /* NotBored */ = {
 			isa = PBXGroup;
 			children = (
-				23AC33D6284FD6C200CC2132 /* Utils */,
 				23171BB9284F915C0030F2B0 /* Managers */,
 				45EAD254284EA91C00DBAE08 /* Models */,
 				45EAD253284EA91500DBAE08 /* Views */,
@@ -101,14 +98,6 @@
 				231EF9D7284EA25400FCD522 /* Info.plist */,
 			);
 			path = NotBored;
-			sourceTree = "<group>";
-		};
-		23AC33D6284FD6C200CC2132 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				23AC33D7284FD73800CC2132 /* Constants.swift */,
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 		45EAD251284EA89500DBAE08 /* UI */ = {
@@ -134,8 +123,8 @@
 				232F713B284FA39500D8B99D /* ActivityViewController.xib */,
 				232F713E284FA67A00D8B99D /* ActivityCell.swift */,
 				232F713F284FA67A00D8B99D /* ActivityCell.xib */,
-				23AC33D0284FD4EC00CC2132 /* TermsConditionsViewController.xib */,
-				23AC33D4284FD55400CC2132 /* TermsConditionsViewController.swift */,
+				45C324E5284FC4B6005DF3F2 /* StartingViewController.swift */,
+				45C324E6284FC4B6005DF3F2 /* StartingViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -209,10 +198,10 @@
 				45C324E0284F79D5005DF3F2 /* SuggestionViewController.xib in Resources */,
 				231EF9D6284EA25400FCD522 /* LaunchScreen.storyboard in Resources */,
 				231EF9D3284EA25400FCD522 /* Assets.xcassets in Resources */,
-				23AC33D1284FD4EC00CC2132 /* TermsConditionsViewController.xib in Resources */,
 				232F713D284FA39500D8B99D /* ActivityViewController.xib in Resources */,
 				232F7141284FA67A00D8B99D /* ActivityCell.xib in Resources */,
 				231EF9D1284EA25200FCD522 /* Main.storyboard in Resources */,
+				45C324E8284FC4B6005DF3F2 /* StartingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,12 +213,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				23171BBB284F91820030F2B0 /* NetworkManager.swift in Sources */,
+				45C324E7284FC4B6005DF3F2 /* StartingViewController.swift in Sources */,
 				231EF9CE284EA25200FCD522 /* ViewController.swift in Sources */,
 				232F7140284FA67A00D8B99D /* ActivityCell.swift in Sources */,
 				231EF9CA284EA25200FCD522 /* AppDelegate.swift in Sources */,
 				45EAD256284EA9BF00DBAE08 /* Activity.swift in Sources */,
-				23AC33D8284FD73800CC2132 /* Constants.swift in Sources */,
-				23AC33D5284FD55400CC2132 /* TermsConditionsViewController.swift in Sources */,
 				232F713C284FA39500D8B99D /* ActivityViewController.swift in Sources */,
 				231EF9CC284EA25200FCD522 /* SceneDelegate.swift in Sources */,
 				45C324DF284F79D5005DF3F2 /* SuggestionViewController.swift in Sources */,
