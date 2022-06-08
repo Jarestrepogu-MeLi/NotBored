@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SuggestionViewController" customModule="NotBored" customModuleProvider="target">
             <connections>
                 <outlet property="categoryLabel" destination="fqR-24-HnN" id="i6K-AB-aUA"/>
+                <outlet property="descriptionLabel" destination="mun-Nm-HqW" id="RFt-FG-QH5"/>
                 <outlet property="participantsLabel" destination="1Fl-qD-hxm" id="UFI-Fa-FMM"/>
                 <outlet property="priceLabel" destination="de0-TB-1nz" id="F4v-Tr-Bwz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

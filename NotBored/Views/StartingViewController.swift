@@ -8,7 +8,7 @@
 import UIKit
 
 class StartingViewController: UIViewController {
-
+    
     @IBOutlet weak var participantsTextField: UITextField!
     @IBOutlet weak var startButton: UIButton!
     
@@ -18,8 +18,10 @@ class StartingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        changeButtonColor(startButton)
         setupUI()
+        
+        view.backgroundColor = UIColor.blue
     }
     
     func setupUI() {
@@ -29,16 +31,21 @@ class StartingViewController: UIViewController {
     
     func setupButton(participants: Int) {
         if participants <= 0 {
+            startButton.backgroundColor = UIColor.gray
             startButton.isEnabled = false
         } else {
+            startButton.backgroundColor = UIColor.blue
             startButton.isEnabled = true
         }
     }
     
-
+    func changeButtonColor(_ button: UIButton) {
+    }
+    
+    
     
     @IBAction func onTapStart(_ sender: Any) {
-        coordinator.pushToActivityView()
+        coordinator.pushToActivityView(participants: participants ?? 0)
     }
     
     
@@ -53,6 +60,10 @@ class StartingViewController: UIViewController {
 extension StartingViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        guard let value = Int(participantsTextField.text!) else { return }
+        participants = value
+        
         if let textField = participantsTextField.text, !textField.isEmpty {
             let validation = validateCharacters(number: textField)
             startButton.isEnabled = validation
@@ -70,7 +81,7 @@ extension StartingViewController: UITextFieldDelegate {
         let regExPred = NSPredicate(format: "SELF MATCHES %@", regEx)
         return regExPred.evaluate(with: number)
     }
-        
+    
 }
 
 

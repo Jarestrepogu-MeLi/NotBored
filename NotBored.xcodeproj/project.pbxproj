@@ -25,6 +25,7 @@
 		45C324EB284FDC58005DF3F2 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C324EA284FDC58005DF3F2 /* CoordinatorProtocol.swift */; };
 		45C324ED284FDC95005DF3F2 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C324EC284FDC95005DF3F2 /* MainCoordinator.swift */; };
 		45EAD256284EA9BF00DBAE08 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EAD255284EA9BF00DBAE08 /* Activity.swift */; };
+		9D42A53028510B3300D459E5 /* ActivityViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D42A52F28510B3300D459E5 /* ActivityViewCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		45C324EA284FDC58005DF3F2 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		45C324EC284FDC95005DF3F2 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		45EAD255284EA9BF00DBAE08 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		9D42A52F28510B3300D459E5 /* ActivityViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			children = (
 				45C324EA284FDC58005DF3F2 /* CoordinatorProtocol.swift */,
 				45C324EC284FDC95005DF3F2 /* MainCoordinator.swift */,
+				9D42A52F28510B3300D459E5 /* ActivityViewCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D42A53028510B3300D459E5 /* ActivityViewCoordinator.swift in Sources */,
 				23171BBB284F91820030F2B0 /* NetworkManager.swift in Sources */,
 				45C324E7284FC4B6005DF3F2 /* StartingViewController.swift in Sources */,
 				45C324EB284FDC58005DF3F2 /* CoordinatorProtocol.swift in Sources */,

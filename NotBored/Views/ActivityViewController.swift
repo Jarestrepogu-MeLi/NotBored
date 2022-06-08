@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum categories: String {  //Organizar en un lugar apropiado
+enum categories: String, CaseIterable {  //Organizar en un lugar apropiado
     case education = "Education",
          recreational = "Recreational",
          social = "Social",
@@ -25,10 +25,9 @@ class ActivityViewController: UIViewController {
     
     @IBOutlet weak var activityTable: UITableView!
     
-    
     let categoriesLabels = ["Education", "Recreational", "Social", "Diy", "Charity", "Cooking", "Relaxation", "Music", "Busywork"]
     
-    var coordinator: MainCoordinator!
+    var coordinator: ActivityViewCoordinator!
 
     var participants: Int?
     
@@ -61,16 +60,17 @@ extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = activityTable.dequeueReusableCell(withIdentifier: "ActivityCell", for: indexPath) as! ActivityCell
         cell.activityTitle.text = categoriesLabels[indexPath.row]
         return cell
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let activityURL = networkManager.searchActivityURL(participants: 1, type: categoriesLabels[indexPath.row].lowercased())
+        let activityURL = networkManager.searchActivityURL(participants: participants ?? 0, type: categoriesLabels[indexPath.row].lowercased())
         networkManager.request(url: activityURL, expecting: Activity.self, completionHandler: { [weak self] result in
             DispatchQueue.main.async {
                 guard let self = self else { return }
                 switch result {
                 case .success(let activity): //Considerar poner un spinner
-                    
+                    self.coordinator?.goToActivity(activity)
                     print(activity)
                 case .failure(let error):
                     print(error)
