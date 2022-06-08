@@ -8,7 +8,7 @@
 import UIKit
 
 
-enum categories: String {
+enum categories: String, CaseIterable {
     case education = "Education",
          recreational = "Recreational",
          social = "Social",

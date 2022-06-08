@@ -18,6 +18,8 @@ class SuggestionViewController: UIViewController {
     
     let networkManager = NetworkManager()
     var resultActivity: Activity?
+    var participants: Int?
+    var isRandom: Bool = false
     
     var priceMessage: String {
         guard let safeResult = resultActivity?.price else {
@@ -48,14 +50,14 @@ class SuggestionViewController: UIViewController {
     func setupInfo(_ activity: Activity?) {
         if let safeActivity = activity {
             participantsLabel.text = String(safeActivity.participants)
-            categoryLabel.text = safeActivity.type
+            categoryLabel.text = safeActivity.type.capitalized
             descriptionLabel.text = safeActivity.activity
             priceLabel.text = priceMessage
         }
     }
     
     @IBAction func onTapTryAnother(_ sender: Any) {
-        let activityURL = networkManager.searchActivityURL(participants: 1, type: resultActivity?.type ?? "")
+        let activityURL = networkManager.searchActivityURL(participants: participants ?? 0, type: isRandom ? nil : resultActivity?.type ?? "")
         networkManager.request(url: activityURL, expecting: Activity.self, completionHandler: { [weak self] result in
             DispatchQueue.main.async {
                 guard let self = self else { return }

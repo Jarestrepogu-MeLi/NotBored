@@ -1,20 +1,20 @@
 //
-//  TermsConditionsViewController.swift
+//  TermsAndConditionsViewController.swift
 //  NotBored
 //
-//  Created by Jorge Andres Restrepo Gutierrez on 7/06/22.
+//  Created by Jorge Andres Bernal Palacio on 8/06/22.
 //
 
 import UIKit
 
-class TermsConditionsViewController: UIViewController {
+class TermsAndConditionsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
+
 
     /*
     // MARK: - Navigation

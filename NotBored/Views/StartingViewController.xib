@@ -62,7 +62,7 @@
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Terms and conditions"/>
                     <connections>
-                        <action selector="onTapTermsAndConditions:" destination="-1" eventType="touchUpInside" id="hbF-oc-1TQ"/>
+                        <action selector="onTapTermsAndConditions:" destination="-1" eventType="touchUpInside" id="CiG-hU-9S3"/>
                     </connections>
                 </button>
             </subviews>

@@ -15,9 +15,11 @@ class ActivityViewCoordinator: Coordinator {
         self.navigationController = navigationController
     }
     
-    func goToActivity(_ activity: Activity ) {
+    func goToActivity(_ activity: Activity, participants: Int, isRandom: Bool) {
         let vc = SuggestionViewController()
         vc.resultActivity = activity
+        vc.participants = participants
+        vc.isRandom = isRandom
         navigationController.pushViewController(vc, animated: true)
     }
 }

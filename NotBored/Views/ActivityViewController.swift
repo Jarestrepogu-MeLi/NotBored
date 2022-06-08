@@ -7,25 +7,11 @@
 
 import UIKit
 
-enum categories: String, CaseIterable {  //Organizar en un lugar apropiado
-    case education = "Education",
-         recreational = "Recreational",
-         social = "Social",
-         diy = "Diy",
-         charity = "Charity",
-         cooking = "Cooking",
-         relaxation = "Relaxation",
-         music = "Music",
-         busywork = "Busywork"
-}
-
 class ActivityViewController: UIViewController {
     
     var networkManager = NetworkManager()
     
     @IBOutlet weak var activityTable: UITableView!
-    
-    let categoriesLabels = ["Education", "Recreational", "Social", "Diy", "Charity", "Cooking", "Relaxation", "Music", "Busywork"]
     
     var coordinator: ActivityViewCoordinator!
 
@@ -36,41 +22,60 @@ class ActivityViewController: UIViewController {
         activityTable.delegate = self
         activityTable.dataSource = self
         
-        self.navigationController?.navigationItem.largeTitleDisplayMode = .always
-        self.navigationController?.navigationBar.prefersLargeTitles = true
+//        self.navigationController?.navigationItem.largeTitleDisplayMode = .always
+//        self.navigationController?.navigationBar.prefersLargeTitles = true
         self.title = "Activities"
         
         setupTable()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "shuffle"), landscapeImagePhone: UIImage(systemName: "shuffle"), style: .done, target: self, action: #selector(randomActivity(_:)))
     }
     
     func setupTable() {
         activityTable.register(UINib(nibName: "ActivityCell", bundle: .main), forCellReuseIdentifier: "ActivityCell")
-        activityTable.rowHeight = (activityTable.frame.height / CGFloat(categoriesLabels.count))
-    }
-}
-
-//MARK: -> TableView
-extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categoriesLabels.count
+        activityTable.rowHeight = (activityTable.frame.height / CGFloat(categories.allCases.count))
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = activityTable.dequeueReusableCell(withIdentifier: "ActivityCell", for: indexPath) as! ActivityCell
-        cell.activityTitle.text = categoriesLabels[indexPath.row]
-        return cell
-        
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let activityURL = networkManager.searchActivityURL(participants: participants ?? 0, type: categoriesLabels[indexPath.row].lowercased())
+    @objc private func randomActivity(_ sender: UIButton) {
+        let activityURL = networkManager.searchActivityURL(participants: participants ?? 0, type: nil)
         networkManager.request(url: activityURL, expecting: Activity.self, completionHandler: { [weak self] result in
             DispatchQueue.main.async {
                 guard let self = self else { return }
                 switch result {
                 case .success(let activity): //Considerar poner un spinner
-                    self.coordinator?.goToActivity(activity)
+                    self.coordinator?.goToActivity(activity, participants: self.participants!, isRandom: true)
+                    print(activity)
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        })
+    }
+    
+}
+
+//MARK: -> TableView
+extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return categories.allCases.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = activityTable.dequeueReusableCell(withIdentifier: "ActivityCell", for: indexPath) as! ActivityCell
+        cell.activityTitle.text = categories.allCases[indexPath.row].rawValue
+        return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let activityURL = networkManager.searchActivityURL(participants: participants ?? 0, type: categories.allCases[indexPath.row].rawValue.lowercased())
+        networkManager.request(url: activityURL, expecting: Activity.self, completionHandler: { [weak self] result in
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                switch result {
+                case .success(let activity): //Considerar poner un spinner
+                    self.coordinator?.goToActivity(activity, participants: self.participants!, isRandom: false)
                     print(activity)
                 case .failure(let error):
                     print(error)

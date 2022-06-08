@@ -21,7 +21,7 @@ class StartingViewController: UIViewController {
         changeButtonColor(startButton)
         setupUI()
         
-        view.backgroundColor = UIColor.blue
+//        view.backgroundColor = UIColor.red
     }
     
     func setupUI() {
@@ -50,7 +50,7 @@ class StartingViewController: UIViewController {
     
     
     @IBAction func onTapTermsAndConditions(_ sender: Any) {
-        // Navegacion a Terminos y Condiciones
+        present(TermsAndConditionsViewController(), animated: true, completion: nil)
     }
     
 }
