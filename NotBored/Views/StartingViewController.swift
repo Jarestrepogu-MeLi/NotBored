@@ -14,6 +14,8 @@ class StartingViewController: UIViewController {
     
     var participants: Int?
     
+    var coordinator: MainCoordinator!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,7 +38,7 @@ class StartingViewController: UIViewController {
 
     
     @IBAction func onTapStart(_ sender: Any) {
-        // Navegacion al ActivityViewController
+        coordinator.pushToActivityView()
     }
     
     
@@ -54,6 +56,8 @@ extension StartingViewController: UITextFieldDelegate {
         if let textField = participantsTextField.text, !textField.isEmpty {
             let validation = validateCharacters(number: textField)
             startButton.isEnabled = validation
+        } else {
+            startButton.isEnabled = false
         }
     }
     
