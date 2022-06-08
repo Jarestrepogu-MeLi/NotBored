@@ -22,6 +22,8 @@
 		45C324E0284F79D5005DF3F2 /* SuggestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45C324DE284F79D5005DF3F2 /* SuggestionViewController.xib */; };
 		45C324E7284FC4B6005DF3F2 /* StartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C324E5284FC4B6005DF3F2 /* StartingViewController.swift */; };
 		45C324E8284FC4B6005DF3F2 /* StartingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45C324E6284FC4B6005DF3F2 /* StartingViewController.xib */; };
+		45C324EB284FDC58005DF3F2 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C324EA284FDC58005DF3F2 /* CoordinatorProtocol.swift */; };
+		45C324ED284FDC95005DF3F2 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C324EC284FDC95005DF3F2 /* MainCoordinator.swift */; };
 		45EAD256284EA9BF00DBAE08 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EAD255284EA9BF00DBAE08 /* Activity.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +45,8 @@
 		45C324DE284F79D5005DF3F2 /* SuggestionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestionViewController.xib; sourceTree = "<group>"; };
 		45C324E5284FC4B6005DF3F2 /* StartingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingViewController.swift; sourceTree = "<group>"; };
 		45C324E6284FC4B6005DF3F2 /* StartingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartingViewController.xib; sourceTree = "<group>"; };
+		45C324EA284FDC58005DF3F2 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
+		45C324EC284FDC95005DF3F2 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		45EAD255284EA9BF00DBAE08 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +88,7 @@
 		231EF9C8284EA25200FCD522 /* NotBored */ = {
 			isa = PBXGroup;
 			children = (
+				45C324E9284FDC48005DF3F2 /* Coordinators */,
 				23171BB9284F915C0030F2B0 /* Managers */,
 				45EAD254284EA91C00DBAE08 /* Models */,
 				45EAD253284EA91500DBAE08 /* Views */,
@@ -98,6 +103,15 @@
 				231EF9D7284EA25400FCD522 /* Info.plist */,
 			);
 			path = NotBored;
+			sourceTree = "<group>";
+		};
+		45C324E9284FDC48005DF3F2 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				45C324EA284FDC58005DF3F2 /* CoordinatorProtocol.swift */,
+				45C324EC284FDC95005DF3F2 /* MainCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 		45EAD251284EA89500DBAE08 /* UI */ = {
@@ -214,8 +228,10 @@
 			files = (
 				23171BBB284F91820030F2B0 /* NetworkManager.swift in Sources */,
 				45C324E7284FC4B6005DF3F2 /* StartingViewController.swift in Sources */,
+				45C324EB284FDC58005DF3F2 /* CoordinatorProtocol.swift in Sources */,
 				231EF9CE284EA25200FCD522 /* ViewController.swift in Sources */,
 				232F7140284FA67A00D8B99D /* ActivityCell.swift in Sources */,
+				45C324ED284FDC95005DF3F2 /* MainCoordinator.swift in Sources */,
 				231EF9CA284EA25200FCD522 /* AppDelegate.swift in Sources */,
 				45EAD256284EA9BF00DBAE08 /* Activity.swift in Sources */,
 				232F713C284FA39500D8B99D /* ActivityViewController.swift in Sources */,

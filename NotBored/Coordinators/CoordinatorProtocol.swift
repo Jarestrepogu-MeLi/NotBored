@@ -5,4 +5,15 @@
 //  Created by Mariano Martin Battaglia on 07/06/2022.
 //
 
-import Foundation
+import UIKit
+
+protocol Coordinator {
+    var navigationController: UINavigationController { get set }
+    func start()
+}
+
+extension Coordinator {
+    func start() {
+        
+    }
+}

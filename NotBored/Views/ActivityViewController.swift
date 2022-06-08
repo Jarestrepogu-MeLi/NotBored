@@ -21,17 +21,26 @@ enum categories: String {  //Organizar en un lugar apropiado
 
 class ActivityViewController: UIViewController {
     
-    let networkManager = NetworkManager()
+    var networkManager = NetworkManager()
     
     @IBOutlet weak var activityTable: UITableView!
     
     
     let categoriesLabels = ["Education", "Recreational", "Social", "Diy", "Charity", "Cooking", "Relaxation", "Music", "Busywork"]
     
+    var coordinator: MainCoordinator!
+
+    var participants: Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         activityTable.delegate = self
         activityTable.dataSource = self
+        
+        self.navigationController?.navigationItem.largeTitleDisplayMode = .always
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.title = "Activities"
+        
         setupTable()
     }
     
