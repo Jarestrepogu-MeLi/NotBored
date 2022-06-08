@@ -53,6 +53,7 @@ class SuggestionViewController: UIViewController {
             categoryLabel.text = safeActivity.type.capitalized
             descriptionLabel.text = safeActivity.activity
             priceLabel.text = priceMessage
+            self.title = isRandom ? "Random" : safeActivity.type.capitalized
         }
     }
     

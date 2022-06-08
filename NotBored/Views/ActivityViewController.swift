@@ -62,11 +62,14 @@ extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = activityTable.dequeueReusableCell(withIdentifier: "ActivityCell", for: indexPath) as! ActivityCell
         cell.activityTitle.text = categories.allCases[indexPath.row].rawValue
-        return cell
+        cell.accessoryType = .disclosureIndicator
         
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         let activityURL = networkManager.searchActivityURL(participants: participants ?? 0, type: categories.allCases[indexPath.row].rawValue.lowercased())
         self.showSpinner()
         networkManager.request(url: activityURL, expecting: Activity.self, completionHandler: { [weak self] result in
