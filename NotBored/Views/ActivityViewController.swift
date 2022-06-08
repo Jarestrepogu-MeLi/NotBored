@@ -14,7 +14,7 @@ class ActivityViewController: UIViewController {
     @IBOutlet weak var activityTable: UITableView!
     
     var coordinator: ActivityViewCoordinator!
-
+    
     var participants: Int?
     
     override func viewDidLoad() {
@@ -22,8 +22,6 @@ class ActivityViewController: UIViewController {
         activityTable.delegate = self
         activityTable.dataSource = self
         
-//        self.navigationController?.navigationItem.largeTitleDisplayMode = .always
-//        self.navigationController?.navigationBar.prefersLargeTitles = true
         self.title = "Activities"
         
         setupTable()
@@ -70,14 +68,22 @@ extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let activityURL = networkManager.searchActivityURL(participants: participants ?? 0, type: categories.allCases[indexPath.row].rawValue.lowercased())
+        self.showSpinner()
         networkManager.request(url: activityURL, expecting: Activity.self, completionHandler: { [weak self] result in
             DispatchQueue.main.async {
                 guard let self = self else { return }
                 switch result {
-                case .success(let activity): //Considerar poner un spinner
+                case .success(let activity):
+                    self.removeSpinner()
                     self.coordinator?.goToActivity(activity, participants: self.participants!, isRandom: false)
                     print(activity)
                 case .failure(let error):
+                    self.removeSpinner()
+                    let alert = UIAlertController(title: "No activity found.", message: "", preferredStyle: .alert)
+                    self.present(alert, animated: true, completion: nil)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                        self.dismiss(animated: true)
+                    })
                     print(error)
                 }
             }

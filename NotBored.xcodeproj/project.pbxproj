@@ -18,6 +18,7 @@
 		232F713D284FA39500D8B99D /* ActivityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 232F713B284FA39500D8B99D /* ActivityViewController.xib */; };
 		232F7140284FA67A00D8B99D /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232F713E284FA67A00D8B99D /* ActivityCell.swift */; };
 		232F7141284FA67A00D8B99D /* ActivityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 232F713F284FA67A00D8B99D /* ActivityCell.xib */; };
+		23575D6928514D9F00969FC0 /* ViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23575D6828514D9F00969FC0 /* ViewController+Extensions.swift */; };
 		45C324DF284F79D5005DF3F2 /* SuggestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C324DD284F79D5005DF3F2 /* SuggestionViewController.swift */; };
 		45C324E0284F79D5005DF3F2 /* SuggestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45C324DE284F79D5005DF3F2 /* SuggestionViewController.xib */; };
 		45C324E7284FC4B6005DF3F2 /* StartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C324E5284FC4B6005DF3F2 /* StartingViewController.swift */; };
@@ -45,6 +46,7 @@
 		232F713B284FA39500D8B99D /* ActivityViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityViewController.xib; sourceTree = "<group>"; };
 		232F713E284FA67A00D8B99D /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		232F713F284FA67A00D8B99D /* ActivityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityCell.xib; sourceTree = "<group>"; };
+		23575D6828514D9F00969FC0 /* ViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extensions.swift"; sourceTree = "<group>"; };
 		45C324DD284F79D5005DF3F2 /* SuggestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionViewController.swift; sourceTree = "<group>"; };
 		45C324DE284F79D5005DF3F2 /* SuggestionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestionViewController.xib; sourceTree = "<group>"; };
 		45C324E5284FC4B6005DF3F2 /* StartingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingViewController.swift; sourceTree = "<group>"; };
@@ -53,7 +55,7 @@
 		45C324EC284FDC95005DF3F2 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		45EAD255284EA9BF00DBAE08 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		9D42A52F28510B3300D459E5 /* ActivityViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewCoordinator.swift; sourceTree = "<group>"; };
-		9D42A5312851279300D459E5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Utils/Constants.swift; sourceTree = "<group>"; };
+		9D42A5312851279300D459E5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9D42A53B2851362F00D459E5 /* TermsAndConditionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsViewController.swift; sourceTree = "<group>"; };
 		9D42A53C2851362F00D459E5 /* TermsAndConditionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsAndConditionsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,7 +98,7 @@
 		231EF9C8284EA25200FCD522 /* NotBored */ = {
 			isa = PBXGroup;
 			children = (
-				9D42A5312851279300D459E5 /* Constants.swift */,
+				23575D6528514D0D00969FC0 /* Utils */,
 				45C324E9284FDC48005DF3F2 /* Coordinators */,
 				23171BB9284F915C0030F2B0 /* Managers */,
 				45EAD254284EA91C00DBAE08 /* Models */,
@@ -113,6 +115,16 @@
 			);
 			path = NotBored;
 			sourceTree = "<group>";
+		};
+		23575D6528514D0D00969FC0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9D42A5312851279300D459E5 /* Constants.swift */,
+				23575D6828514D9F00969FC0 /* ViewController+Extensions.swift */,
+			);
+			name = Utils;
+			path = NotBored/Utils;
+			sourceTree = SOURCE_ROOT;
 		};
 		45C324E9284FDC48005DF3F2 /* Coordinators */ = {
 			isa = PBXGroup;
@@ -240,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D42A53028510B3300D459E5 /* ActivityViewCoordinator.swift in Sources */,
+				23575D6928514D9F00969FC0 /* ViewController+Extensions.swift in Sources */,
 				23171BBB284F91820030F2B0 /* NetworkManager.swift in Sources */,
 				45C324E7284FC4B6005DF3F2 /* StartingViewController.swift in Sources */,
 				45C324EB284FDC58005DF3F2 /* CoordinatorProtocol.swift in Sources */,
