@@ -10,8 +10,9 @@ import UIKit
 extension StartingViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        
-        guard let value = Int(participantsTextField.text!) else { return }
+        guard let value = Int(participantsTextField.text!) else {
+            return startButton.isEnabled = false
+        }
         participants = value
         
         if let textField = participantsTextField.text {
@@ -26,6 +27,7 @@ extension StartingViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
+        return true
     }
     
     func addDoneButtonOnNumpad(textField: UITextField) {
@@ -39,7 +41,7 @@ extension StartingViewController: UITextFieldDelegate {
         }
     
     private func validateCharacters(number: String) -> Bool {
-        let regEx = "^[1-9][1-9]*$"
+        let regEx = "^[1-9][0-9]*$"
         let regExPred = NSPredicate(format: "SELF MATCHES %@", regEx)
         return regExPred.evaluate(with: number)
     }
