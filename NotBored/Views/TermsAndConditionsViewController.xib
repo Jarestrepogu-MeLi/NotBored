@@ -38,7 +38,7 @@
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtY-Kg-zGZ">
                                     <rect key="frame" x="8" y="8" width="398" height="1258"/>
-                                    <mutableString key="text">Lorem ipsum dolor sit amet consectetur adipiscing elit inceptos ridiculus iaculis,
+                                    <string key="text">Lorem ipsum dolor sit amet consectetur adipiscing elit inceptos ridiculus iaculis,
 nullam ligula elementum duis tellus maecenas nec fermentum sed dictum
 laoreet, taciti donec habitant quam purus ultricies porta posuere sociis. Cubilia
 senectus netus integer tempor dignissim viverra nostra tellus scelerisque aliquet,
@@ -71,7 +71,7 @@ vestibulum cum leo semper fusce porta eu fermentum. Proin nisi suspendisse
 class facilisi curabitur quisque, fusce vulputate semper a nulla velit, duis in orci
 faucibus turpis. Risus metus magnis aliquam accumsan laoreet congue per,
 tempus purus et odio senectus sodales vulputate, ligula malesuada dis habitasse
-nullam pellentesque.</mutableString>
+nullam pellentesque.</string>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>

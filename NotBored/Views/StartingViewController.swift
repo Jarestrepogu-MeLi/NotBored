@@ -18,31 +18,25 @@ class StartingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        changeButtonColor(startButton)
         setupUI()
         addDoneButtonOnNumpad(textField: participantsTextField)
-//        view.backgroundColor = UIColor.red
     }
     
     func setupUI() {
         participantsTextField.delegate = self
         startButton.isEnabled = false
+        startButton.backgroundColor = UIColor.gray
+        startButton.layer.cornerRadius = CGFloat(6)
+        startButton.alpha = 0.5
     }
     
     func setupButton(participants: Int) {
         if participants <= 0 {
-            startButton.backgroundColor = UIColor.gray
             startButton.isEnabled = false
         } else {
-            startButton.backgroundColor = UIColor.blue
             startButton.isEnabled = true
         }
     }
-    
-    func changeButtonColor(_ button: UIButton) {
-    }
-    
-    
     
     @IBAction func onTapStart(_ sender: Any) {
         coordinator.pushToActivityView(participants: participants ?? 0)
@@ -66,6 +60,8 @@ extension StartingViewController: UITextFieldDelegate {
         
         if let textField = participantsTextField.text, !textField.isEmpty {
             let validation = validateCharacters(number: textField)
+            startButton.alpha = 1
+            startButton.backgroundColor = UIColor.systemBlue
             startButton.isEnabled = validation
         } else {
             startButton.isEnabled = false

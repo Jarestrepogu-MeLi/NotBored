@@ -22,16 +22,20 @@ class ActivityViewController: UIViewController {
         activityTable.delegate = self
         activityTable.dataSource = self
         
-        self.title = "Activities"
-        
         setupTable()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "shuffle"), landscapeImagePhone: UIImage(systemName: "shuffle"), style: .done, target: self, action: #selector(randomActivity(_:)))
+        self.title = "Activities"
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "shuffle"), landscapeImagePhone: UIImage(systemName: "shuffle"), style: .plain, target: self, action: #selector(randomActivity(_:)))
     }
     
     func setupTable() {
         activityTable.register(UINib(nibName: "ActivityCell", bundle: .main), forCellReuseIdentifier: "ActivityCell")
-        activityTable.rowHeight = (activityTable.frame.height / CGFloat(categories.allCases.count))
+        var navBarHeight: CGFloat {
+                return (view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0.0) +
+                    (self.navigationController?.navigationBar.frame.height ?? 0.0)
+        }
+        activityTable.rowHeight = (activityTable.frame.height - navBarHeight) / CGFloat(categories.allCases.count)
     }
     
     @objc private func randomActivity(_ sender: UIButton) {
