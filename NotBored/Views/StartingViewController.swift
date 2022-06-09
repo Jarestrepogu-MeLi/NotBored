@@ -20,7 +20,7 @@ class StartingViewController: UIViewController {
         super.viewDidLoad()
         changeButtonColor(startButton)
         setupUI()
-        
+        addDoneButtonOnNumpad(textField: participantsTextField)
 //        view.backgroundColor = UIColor.red
     }
     
@@ -81,6 +81,16 @@ extension StartingViewController: UITextFieldDelegate {
         let regExPred = NSPredicate(format: "SELF MATCHES %@", regEx)
         return regExPred.evaluate(with: number)
     }
+    
+    func addDoneButtonOnNumpad(textField: UITextField) {
+            let keypadToolbar: UIToolbar = UIToolbar()
+            keypadToolbar.items=[
+                UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: textField, action: #selector(UITextField.resignFirstResponder)),
+                UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: self, action: nil)
+            ]
+            keypadToolbar.sizeToFit()
+            textField.inputAccessoryView = keypadToolbar
+        }
     
 }
 
