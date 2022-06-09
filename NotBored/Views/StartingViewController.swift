@@ -22,20 +22,12 @@ class StartingViewController: UIViewController {
         addDoneButtonOnNumpad(textField: participantsTextField)
     }
     
-    func setupUI() {
+    private func setupUI() {
         participantsTextField.delegate = self
         startButton.isEnabled = false
         startButton.backgroundColor = UIColor.gray
         startButton.layer.cornerRadius = CGFloat(6)
         startButton.alpha = 0.5
-    }
-    
-    func setupButton(participants: Int) {
-        if participants <= 0 {
-            startButton.isEnabled = false
-        } else {
-            startButton.isEnabled = true
-        }
     }
     
     @IBAction func onTapStart(_ sender: Any) {
@@ -48,47 +40,3 @@ class StartingViewController: UIViewController {
     }
     
 }
-
-
-// MARK: - Extension UIFieldDelegate
-extension StartingViewController: UITextFieldDelegate {
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        
-        guard let value = Int(participantsTextField.text!) else { return }
-        participants = value
-        
-        if let textField = participantsTextField.text, !textField.isEmpty {
-            let validation = validateCharacters(number: textField)
-            startButton.alpha = 1
-            startButton.backgroundColor = UIColor.systemBlue
-            startButton.isEnabled = validation
-        } else {
-            startButton.isEnabled = false
-        }
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-    }
-    
-    func validateCharacters(number: String) -> Bool {
-        let regEx = "^[1-9][0-9]*$"
-        let regExPred = NSPredicate(format: "SELF MATCHES %@", regEx)
-        return regExPred.evaluate(with: number)
-    }
-    
-    func addDoneButtonOnNumpad(textField: UITextField) {
-            let keypadToolbar: UIToolbar = UIToolbar()
-            keypadToolbar.items=[
-                UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: textField, action: #selector(UITextField.resignFirstResponder)),
-                UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: self, action: nil)
-            ]
-            keypadToolbar.sizeToFit()
-            textField.inputAccessoryView = keypadToolbar
-        }
-    
-}
-
-
-

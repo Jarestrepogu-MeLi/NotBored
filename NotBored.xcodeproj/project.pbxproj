@@ -19,6 +19,8 @@
 		232F7140284FA67A00D8B99D /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232F713E284FA67A00D8B99D /* ActivityCell.swift */; };
 		232F7141284FA67A00D8B99D /* ActivityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 232F713F284FA67A00D8B99D /* ActivityCell.xib */; };
 		23575D6928514D9F00969FC0 /* ViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23575D6828514D9F00969FC0 /* ViewController+Extensions.swift */; };
+		455224B52852552000856999 /* ActivityViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455224B42852552000856999 /* ActivityViewController+Extensions.swift */; };
+		455224B728525AF700856999 /* StartingViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455224B628525AF700856999 /* StartingViewController+Extensions.swift */; };
 		45C324DF284F79D5005DF3F2 /* SuggestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C324DD284F79D5005DF3F2 /* SuggestionViewController.swift */; };
 		45C324E0284F79D5005DF3F2 /* SuggestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45C324DE284F79D5005DF3F2 /* SuggestionViewController.xib */; };
 		45C324E7284FC4B6005DF3F2 /* StartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C324E5284FC4B6005DF3F2 /* StartingViewController.swift */; };
@@ -47,6 +49,8 @@
 		232F713E284FA67A00D8B99D /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		232F713F284FA67A00D8B99D /* ActivityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityCell.xib; sourceTree = "<group>"; };
 		23575D6828514D9F00969FC0 /* ViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extensions.swift"; sourceTree = "<group>"; };
+		455224B42852552000856999 /* ActivityViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityViewController+Extensions.swift"; sourceTree = "<group>"; };
+		455224B628525AF700856999 /* StartingViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StartingViewController+Extensions.swift"; sourceTree = "<group>"; };
 		45C324DD284F79D5005DF3F2 /* SuggestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionViewController.swift; sourceTree = "<group>"; };
 		45C324DE284F79D5005DF3F2 /* SuggestionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestionViewController.xib; sourceTree = "<group>"; };
 		45C324E5284FC4B6005DF3F2 /* StartingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingViewController.swift; sourceTree = "<group>"; };
@@ -98,8 +102,8 @@
 		231EF9C8284EA25200FCD522 /* NotBored */ = {
 			isa = PBXGroup;
 			children = (
+				455224B32852531C00856999 /* Extensions */,
 				23575D6528514D0D00969FC0 /* Utils */,
-				45C324E9284FDC48005DF3F2 /* Coordinators */,
 				23171BB9284F915C0030F2B0 /* Managers */,
 				45EAD254284EA91C00DBAE08 /* Models */,
 				45EAD253284EA91500DBAE08 /* Views */,
@@ -120,11 +124,20 @@
 			isa = PBXGroup;
 			children = (
 				9D42A5312851279300D459E5 /* Constants.swift */,
-				23575D6828514D9F00969FC0 /* ViewController+Extensions.swift */,
 			);
 			name = Utils;
 			path = NotBored/Utils;
 			sourceTree = SOURCE_ROOT;
+		};
+		455224B32852531C00856999 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				23575D6828514D9F00969FC0 /* ViewController+Extensions.swift */,
+				455224B628525AF700856999 /* StartingViewController+Extensions.swift */,
+				455224B42852552000856999 /* ActivityViewController+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
 		};
 		45C324E9284FDC48005DF3F2 /* Coordinators */ = {
 			isa = PBXGroup;
@@ -139,6 +152,7 @@
 		45EAD251284EA89500DBAE08 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				45C324E9284FDC48005DF3F2 /* Coordinators */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -251,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				455224B728525AF700856999 /* StartingViewController+Extensions.swift in Sources */,
 				9D42A53028510B3300D459E5 /* ActivityViewCoordinator.swift in Sources */,
 				23575D6928514D9F00969FC0 /* ViewController+Extensions.swift in Sources */,
 				23171BBB284F91820030F2B0 /* NetworkManager.swift in Sources */,
@@ -258,6 +273,7 @@
 				45C324EB284FDC58005DF3F2 /* CoordinatorProtocol.swift in Sources */,
 				231EF9CE284EA25200FCD522 /* ViewController.swift in Sources */,
 				232F7140284FA67A00D8B99D /* ActivityCell.swift in Sources */,
+				455224B52852552000856999 /* ActivityViewController+Extensions.swift in Sources */,
 				45C324ED284FDC95005DF3F2 /* MainCoordinator.swift in Sources */,
 				9D42A5322851279300D459E5 /* Constants.swift in Sources */,
 				9D42A53D2851362F00D459E5 /* TermsAndConditionsViewController.swift in Sources */,

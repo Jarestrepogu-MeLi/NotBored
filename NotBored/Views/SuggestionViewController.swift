@@ -7,8 +7,6 @@
 
 import UIKit
 
-
-
 class SuggestionViewController: UIViewController {
     
     @IBOutlet weak var participantsLabel: UILabel!
@@ -21,7 +19,7 @@ class SuggestionViewController: UIViewController {
     var participants: Int?
     var isRandom: Bool = false
     
-    var priceMessage: String {
+    private var priceMessage: String {
         guard let safeResult = resultActivity?.price else {
             return "Error"
         }
@@ -37,7 +35,6 @@ class SuggestionViewController: UIViewController {
         default:
             return "Error"
         }
-        
     }
     
     override func viewDidLoad() {
@@ -47,7 +44,7 @@ class SuggestionViewController: UIViewController {
         
     }
     
-    func setupInfo(_ activity: Activity?) {
+    private func setupInfo(_ activity: Activity?) {
         if let safeActivity = activity {
             participantsLabel.text = String(safeActivity.participants)
             categoryLabel.text = safeActivity.type.capitalized
@@ -59,17 +56,18 @@ class SuggestionViewController: UIViewController {
     
     @IBAction func onTapTryAnother(_ sender: Any) {
         let activityURL = networkManager.searchActivityURL(participants: participants ?? 0, type: isRandom ? nil : resultActivity?.type ?? "")
+        self.showSpinner()
         networkManager.request(url: activityURL, expecting: Activity.self, completionHandler: { [weak self] result in
             DispatchQueue.main.async {
                 guard let self = self else { return }
                 switch result {
-                case .success(let activity): //Considerar poner un spinner
+                case .success(let activity):
                     self.resultActivity = activity
                     self.setupInfo(self.resultActivity)
-                    print(self.resultActivity)
                 case .failure(let error):
-                    print(error)
+                    print(error) //Crear funcion del mensaje y ponerla donde haga falta
                 }
+                self.removeSpinner()
             }
         })
     }

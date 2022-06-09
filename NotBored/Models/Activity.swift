@@ -10,7 +10,7 @@ import Foundation
 struct Activity: Decodable {
     let activity: String
     let accessibility: Double
-    let type: String // Enum para type ??
+    let type: String
     let participants: Int
     let price: Double
 }
