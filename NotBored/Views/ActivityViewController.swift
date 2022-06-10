@@ -32,29 +32,28 @@ class ActivityViewController: UIViewController {
     private func setupTable() {
         activityTable.register(UINib(nibName: "ActivityCell", bundle: .main), forCellReuseIdentifier: "ActivityCell")
         var navBarHeight: CGFloat {
-                return (view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0.0) +
-                    (self.navigationController?.navigationBar.frame.height ?? 0.0)
+            return (view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0.0) +
+            (self.navigationController?.navigationBar.frame.height ?? 0.0)
         }
         activityTable.rowHeight = (activityTable.frame.height - navBarHeight) / CGFloat(categories.allCases.count)
     }
     
     @objc private func randomActivity(_ sender: UIButton) {
-        let activityURL = networkManager.searchActivityURL(participants: participants ?? 0, type: nil)
         self.showSpinner()
-        networkManager.request(url: activityURL, expecting: Activity.self, completionHandler: { [weak self] result in
+        networkManager.fetchActivity(with: participants!, type: nil, completion: { [weak self] result in
             DispatchQueue.main.async {
                 guard let self = self else { return }
                 switch result {
-                case .success(let activity): //Considerar poner un spinner
+                case .success(let activity):
                     self.coordinator?.goToActivity(activity, participants: self.participants!, isRandom: true)
                     print(activity)
                 case .failure(let error):
+                    self.showAlert(label: "Please try again.", delay: 0.5, animated: true)
                     print(error)
                 }
                 self.removeSpinner()
             }
         })
     }
-    
 }
 

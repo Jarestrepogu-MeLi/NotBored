@@ -55,21 +55,35 @@ class SuggestionViewController: UIViewController {
     }
     
     @IBAction func onTapTryAnother(_ sender: Any) {
-        let activityURL = networkManager.searchActivityURL(participants: participants ?? 0, type: isRandom ? nil : resultActivity?.type ?? "")
         self.showSpinner()
-        networkManager.request(url: activityURL, expecting: Activity.self, completionHandler: { [weak self] result in
-            DispatchQueue.main.async {
-                guard let self = self else { return }
-                switch result {
-                case .success(let activity):
-                    self.resultActivity = activity
-                    self.setupInfo(self.resultActivity)
-                case .failure(let error):
-                    print(error) //Crear funcion del mensaje y ponerla donde haga falta
-                }
-                self.removeSpinner()
-            }
-        })
+        networkManager.fetchActivity(with: participants ?? 0, type: isRandom ? nil : resultActivity?.type ?? "", completion: { [weak self] result in
+                        DispatchQueue.main.async {
+                            guard let self = self else { return }
+                            switch result {
+                            case .success(let activity):
+                                self.resultActivity = activity
+                                self.setupInfo(self.resultActivity)
+                            case .failure(let error):
+                                print(error) //Crear funcion del mensaje y ponerla donde haga falta
+                            }
+                            self.removeSpinner()
+                        }
+                    })
+//        let activityURL = networkManager.searchActivityURL(participants: participants ?? 0, type: isRandom ? nil : resultActivity?.type ?? "")
+//        self.showSpinner()
+//        networkManager.request(url: activityURL, expecting: Activity.self, completionHandler: { [weak self] result in
+//            DispatchQueue.main.async {
+//                guard let self = self else { return }
+//                switch result {
+//                case .success(let activity):
+//                    self.resultActivity = activity
+//                    self.setupInfo(self.resultActivity)
+//                case .failure(let error):
+//                    print(error) //Crear funcion del mensaje y ponerla donde haga falta
+//                }
+//                self.removeSpinner()
+//            }
+//        })
     }
 }
 

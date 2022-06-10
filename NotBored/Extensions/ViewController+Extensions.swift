@@ -28,4 +28,12 @@ extension UIViewController {
         aView?.removeFromSuperview()
         aView = nil
     }
+    
+    func showAlert(label: String, delay: Double, animated: Bool) {
+        let alert = UIAlertController(title: label, message: "", preferredStyle: .alert)
+        self.present(alert, animated: animated, completion: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: {
+            self.dismiss(animated: animated)
+        })
+    }
 }

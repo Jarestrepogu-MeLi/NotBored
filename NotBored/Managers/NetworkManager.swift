@@ -17,7 +17,7 @@ struct NetworkManager{
     
     let page: String = ""
     
-    func searchActivityURL(participants: Int, type: String?) -> URL {
+    private func searchActivityURL(participants: Int, type: String?) -> URL {
         var url = URLComponents()
         url.host = "www.boredapi.com"
         url.scheme = "http"
@@ -35,7 +35,7 @@ struct NetworkManager{
         return URL(string: url.string!)!
     }
     
-    func request<T: Decodable>(url: URL?, expecting: T.Type, completionHandler: @escaping (Result<T, Error>) -> Void) {
+    private func request <T: Decodable> (url: URL?, expecting: T.Type, completionHandler: @escaping (Result<T, Error>) -> Void) {
         
         guard let url = url else {
             completionHandler(.failure(CustomError.invalidUrl))
@@ -61,5 +61,10 @@ struct NetworkManager{
             }
         }
         task.resume()
+    }
+    
+    func fetchActivity (with participants: Int, type: String?, completion: @escaping (Result<Activity, Error>) -> Void) {
+        let url = searchActivityURL(participants: participants, type: type)
+        request(url: url, expecting: Activity.self, completionHandler: completion)
     }
 }

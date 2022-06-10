@@ -22,10 +22,8 @@ extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
-        let activityURL = networkManager.searchActivityURL(participants: participants ?? 0, type: categories.allCases[indexPath.row].rawValue.lowercased())
         self.showSpinner()
-        networkManager.request(url: activityURL, expecting: Activity.self, completionHandler: { [weak self] result in
+        networkManager.fetchActivity(with: participants ?? 0, type: categories.allCases[indexPath.row].rawValue.lowercased(), completion: { [weak self] result in
             DispatchQueue.main.async {
                 guard let self = self else { return }
                 switch result {
@@ -33,15 +31,11 @@ extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
                     self.coordinator?.goToActivity(activity, participants: self.participants!, isRandom: false)
                     print(activity)
                 case .failure(let error):
-                    let alert = UIAlertController(title: "No activity found.", message: "", preferredStyle: .alert)
-                    self.present(alert, animated: true, completion: nil)
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-                        self.dismiss(animated: true)
-                    })
+                    self.showAlert(label: "No activity found.", delay: 0.5, animated: true)
                     print(error)
                 }
                 self.removeSpinner()
             }
         })
-    }
+    }    
 }
