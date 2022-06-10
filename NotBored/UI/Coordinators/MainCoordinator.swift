@@ -23,11 +23,12 @@ class MainCoordinator: Coordinator {
     }
     
     func pushToActivityView(participants: Int) {
-        let vc = ActivityViewController()
+//        let vc = ActivityViewController()
+        let vc = ActivityViewModel()
         vc.coordinator = ActivityViewCoordinator(navigationController: navigationController)
         vc.participants = participants
         self.navigationController.setNavigationBarHidden(false, animated: false)
-        self.navigationController.pushViewController(vc, animated: true)
+        self.navigationController.pushViewController(ActivityViewController(), animated: true)
     }
     
 }

@@ -7,13 +7,12 @@
 
 import UIKit
 
-class StartingViewController: UIViewController {
+final class StartingViewController: UIViewController {
     
     @IBOutlet weak var participantsTextField: UITextField!
     @IBOutlet weak var startButton: UIButton!
     
     var participants: Int?
-    
     var coordinator: MainCoordinator!
     
     override func viewDidLoad() {
@@ -37,6 +36,5 @@ class StartingViewController: UIViewController {
     
     @IBAction func onTapTermsAndConditions(_ sender: Any) {
         present(TermsAndConditionsViewController(), animated: true, completion: nil)
-    }
-    
+    }    
 }

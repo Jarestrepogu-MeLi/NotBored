@@ -15,8 +15,6 @@ struct NetworkManager{
         case noActivityFound
     }
     
-    let page: String = ""
-    
     private func searchActivityURL(participants: Int, type: String?) -> URL {
         var url = URLComponents()
         url.host = "www.boredapi.com"
@@ -63,7 +61,7 @@ struct NetworkManager{
         task.resume()
     }
     
-    func fetchActivity (with participants: Int, type: String?, completion: @escaping (Result<Activity, Error>) -> Void) {
+    func fetchActivity(with participants: Int, type: String?, completion: @escaping (Result<Activity, Error>) -> Void) {
         let url = searchActivityURL(participants: participants, type: type)
         request(url: url, expecting: Activity.self, completionHandler: completion)
     }

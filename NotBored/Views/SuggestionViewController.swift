@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SuggestionViewController: UIViewController {
+final class SuggestionViewController: UIViewController {
     
     @IBOutlet weak var participantsLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
@@ -57,33 +57,19 @@ class SuggestionViewController: UIViewController {
     @IBAction func onTapTryAnother(_ sender: Any) {
         self.showSpinner()
         networkManager.fetchActivity(with: participants ?? 0, type: isRandom ? nil : resultActivity?.type ?? "", completion: { [weak self] result in
-                        DispatchQueue.main.async {
-                            guard let self = self else { return }
-                            switch result {
-                            case .success(let activity):
-                                self.resultActivity = activity
-                                self.setupInfo(self.resultActivity)
-                            case .failure(let error):
-                                print(error) //Crear funcion del mensaje y ponerla donde haga falta
-                            }
-                            self.removeSpinner()
-                        }
-                    })
-//        let activityURL = networkManager.searchActivityURL(participants: participants ?? 0, type: isRandom ? nil : resultActivity?.type ?? "")
-//        self.showSpinner()
-//        networkManager.request(url: activityURL, expecting: Activity.self, completionHandler: { [weak self] result in
-//            DispatchQueue.main.async {
-//                guard let self = self else { return }
-//                switch result {
-//                case .success(let activity):
-//                    self.resultActivity = activity
-//                    self.setupInfo(self.resultActivity)
-//                case .failure(let error):
-//                    print(error) //Crear funcion del mensaje y ponerla donde haga falta
-//                }
-//                self.removeSpinner()
-//            }
-//        })
+            DispatchQueue.main.async {
+                guard let self = self else { return }
+                switch result {
+                case .success(let activity):
+                    self.resultActivity = activity
+                    self.setupInfo(self.resultActivity)
+                case .failure(let error):
+                    print(error)
+                    self.showAlert(label: "Please try again.", delay: 0.5, animated: true)
+                }
+                self.removeSpinner()
+            }
+        })
     }
 }
 
