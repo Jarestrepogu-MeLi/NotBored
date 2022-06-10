@@ -107,7 +107,6 @@
 				23171BB9284F915C0030F2B0 /* Managers */,
 				45EAD254284EA91C00DBAE08 /* Models */,
 				45EAD253284EA91500DBAE08 /* Views */,
-				45EAD252284EA8AF00DBAE08 /* ViewModels */,
 				45EAD251284EA89500DBAE08 /* UI */,
 				231EF9C9284EA25200FCD522 /* AppDelegate.swift */,
 				231EF9CB284EA25200FCD522 /* SceneDelegate.swift */,
@@ -155,13 +154,6 @@
 				45C324E9284FDC48005DF3F2 /* Coordinators */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		45EAD252284EA8AF00DBAE08 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		45EAD253284EA91500DBAE08 /* Views */ = {

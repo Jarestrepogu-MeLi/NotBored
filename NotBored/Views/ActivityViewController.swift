@@ -12,9 +12,7 @@ class ActivityViewController: UIViewController {
     @IBOutlet weak var activityTable: UITableView!
     
     let networkManager = NetworkManager()
-    
-    var coordinator: ActivityViewCoordinator!
-    
+    var coordinator: ActivityViewCoordinator!    
     var participants: Int?
     
     override func viewDidLoad() {
@@ -35,7 +33,7 @@ class ActivityViewController: UIViewController {
             return (view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0.0) +
             (self.navigationController?.navigationBar.frame.height ?? 0.0)
         }
-        activityTable.rowHeight = (activityTable.frame.height - navBarHeight) / CGFloat(categories.allCases.count)
+        activityTable.rowHeight = (activityTable.frame.height - navBarHeight) / CGFloat(Categories.allCases.count)
     }
     
     @objc private func randomActivity(_ sender: UIButton) {
@@ -46,7 +44,6 @@ class ActivityViewController: UIViewController {
                 switch result {
                 case .success(let activity):
                     self.coordinator?.goToActivity(activity, participants: self.participants!, isRandom: true)
-                    print(activity)
                 case .failure(let error):
                     self.showAlert(label: "Please try again.", delay: 0.5, animated: true)
                     print(error)

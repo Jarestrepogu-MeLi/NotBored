@@ -11,6 +11,10 @@ extension StartingViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard let value = Int(participantsTextField.text!) else {
+            
+            startButton.backgroundColor = UIColor.gray
+            startButton.alpha = 0.5
+            
             return startButton.isEnabled = false
         }
         participants = value

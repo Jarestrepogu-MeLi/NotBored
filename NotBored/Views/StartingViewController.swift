@@ -13,7 +13,6 @@ class StartingViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     
     var participants: Int?
-    
     var coordinator: MainCoordinator!
     
     override func viewDidLoad() {
